@@ -17,15 +17,15 @@ mobs:register_mob("zmobs:mese_monster", {
 	damage = 3,
 	drops = {
 		{name = "default:mese",
-		chance = 1,
+		chance = 2,
 		min = 0,
 		max = 2,},
 		{name = "default:mese_crystal",
-		chance = 1,
+		chance = 2,
 		min = 0,
 		max = 5,},
 		{name = "default:mese_crystal_fragment",
-		chance = 1,
+		chance = 2,
 		min = 0,
 		max = 10,},
 	},
@@ -37,7 +37,7 @@ mobs:register_mob("zmobs:mese_monster", {
 	light_damage = 0,
 	attack_type = "shoot",
 	arrow = "zmobs:mese_arrow",
-	shoot_interval = .25,
+	shoot_interval = .5,
 	animation = {
 		speed_normal = 15,
 		speed_run = 15,
@@ -51,7 +51,7 @@ mobs:register_mob("zmobs:mese_monster", {
 		punch_end = 63,
 	}
 })
-mobs:register_spawn("zmobs:mese_monster", {"default:stone"}, 3, -1, 10000, 3, 0)
+mobs:register_spawn("zmobs:mese_monster", {"default:stone"}, 3, -1, 5000, 3, 0)
 
 mobs:register_arrow("zmobs:mese_arrow", {
 	visual = "sprite",
