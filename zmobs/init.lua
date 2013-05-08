@@ -156,9 +156,37 @@ mobs:register_spawn("zmobs:lava_flan", {"default:lava_source"}, 15, -1, 1000, 10
 zmobs:register_egg("zmobs","lava_flan","Lava flan")
 
 
+mobs:register_mob("zmobs:spider", {
+	type = "animal",
+	hp_max = 2,
+	collisionbox = {-0.1, -0.1, -0.1, 0.1, 0.1, 0.1},
+	visual = "mesh",
+	mesh = "zmobs_spider.x",
+	textures = {"zmobs_spider.png"},
+	makes_footstep_sound = false,
+	walk_velocity = 1,
+	armor = 200,
+	drops = {},
+	drawtype = "front",
+	water_damage = 0,
+	lava_damage = 1,
+	light_damage = 0,
+	animation = {
+		speed_normal = 15,
+		speed_run = 20,
+		stand_start = 0,
+		stand_end = 8,
+		walk_start = 10,
+		walk_end = 18,
+		run_start = 10,
+		run_end = 18,
+		punch_start = 10,
+		punch_end = 18,
+	}
+})
+mobs:register_spawn("zmobs:spider", {"default:wood"}, 15, -1, 100, 3, 0)
+
+
 -- TODO
--- Make special drops for lava flan
--- Register eggs for every mob, and make them drop it occasionally
-
-
+--- Make cobwebs for spiders (requires on_step)
 
