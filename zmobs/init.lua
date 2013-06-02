@@ -10,6 +10,18 @@ function zmobs:register_egg(modname, mobname, mobdesc)
 		description = mobdesc.." egg",
 		inventory_image = modname.."_egg_"..mobname..".png",
 		on_place = function(itemstack, placer, pointed_thing)
+			if pointed_thing.type ~= "node" then
+				return
+			end
+			-- Call on_rightclick if the pointed node defines it
+			if placer and not placer:get_player_control().sneak then
+				local n = minetest.get_node(pointed_thing.under)
+				local nn = n.name
+				if minetest.registered_nodes[nn] and minetest.registered_nodes[nn].on_rightclick then
+					return minetest.registered_nodes[nn].on_rightclick(pointed_thing.under, n, placer, itemstack) or itemstack
+				end
+			end
+			-- Actually spawn the mob
 			minetest.env:add_entity(pointed_thing.above, modname..":"..mobname)
 			if not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
