@@ -37,11 +37,6 @@ minetest.register_craftitem("zmobs:lava_orb", {
 	description = "Lava orb",
 	inventory_image = "zmobs_lava_orb.png",
 	on_place = function(itemstack, placer, pointed_thing)
-		minetest.item_place_node(ItemStack({name="fire:basic_flame"}), placer, pointed_thing)
-		if not minetest.setting_getbool("creative_mode") then
-			itemstack:take_item()
-		end
-		return itemstack
 	end,
 })
 
