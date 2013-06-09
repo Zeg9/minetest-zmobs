@@ -131,7 +131,7 @@ mobs:register_mob("zmobs:lava_flan", {
 	damage = 3,
 	drops = {
 		{name = "zmobs:lava_orb",
-		chance = 25,
+		chance = 15,
 		min = 1,
 		max = 1,},
 		{name = "zmobs:egg_lava_flan",
