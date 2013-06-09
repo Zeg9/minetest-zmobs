@@ -19,9 +19,9 @@ minetest.register_globalstep(function(dtime)
 		else
 			if player:get_inventory() then 
 				for i,stack in ipairs(player:get_inventory():get_list("main")) do
-					if i<9 and string.sub(stack:get_name(), 0, 18) == "lavatemple:dagger_" then
-						player:get_inventory():remove_item("main", stack:get_name())
-						player:get_inventory():add_item("main", "lavatemple:dagger_"..compass_image)
+					if string.sub(stack:get_name(), 0, 18) == "lavatemple:dagger_" and
+					   stack:get_name() ~= "lavatemple:dagger_"..compass_image then
+						player:get_inventory():set_stack("main", i, ItemStack("lavatemple:dagger_"..compass_image))
 					end
 				end
 			end
